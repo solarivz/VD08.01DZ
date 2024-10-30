@@ -13,7 +13,7 @@ def index():
     # Если пользователь нажал кнопку "Получить цитату"
     if request.method == 'POST':
         # Запрашиваем случайную цитату через API
-        response = requests.get('https://api.quotable.io/random')
+        response = requests.get('https://api.quotable.io/random', verify=False)
 
         if response.status_code == 200:  # Если запрос успешен
             data = response.json()
